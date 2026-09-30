@@ -1,0 +1,33 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="plone_SkynetA11y_pdf_remediation">
+
+  <!-- The static JS/CSS/img, served at
+       <site>/++plone++plone_SkynetA11y_pdf_remediation/... -->
+  <plone:static
+      directory="static"
+      type="plone"
+      name="plone_SkynetA11y_pdf_remediation"
+      />
+
+  <!-- Standalone dashboard page (Django: /pdf-remediation-dashboard/). -->
+  <browser:page
+      name="pdf-remediation-dashboard"
+      for="plone.base.interfaces.IPloneSiteRoot"
+      class=".views.DashboardView"
+      permission="cmf.ManagePortal"
+      layer="plone_SkynetA11y_pdf_remediation.interfaces.IPlonePdfRemediationLayer"
+      />
+
+  <!-- Same dashboard, embedded in Plone's chrome (Site Setup entry). -->
+  <browser:page
+      name="pdf-remediation-dashboard-admin"
+      for="plone.base.interfaces.IPloneSiteRoot"
+      class=".views.DashboardAdminView"
+      permission="cmf.ManagePortal"
+      layer="plone_SkynetA11y_pdf_remediation.interfaces.IPlonePdfRemediationLayer"
+      />
+
+</configure>

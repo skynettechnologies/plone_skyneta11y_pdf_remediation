@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <!-- 1000 -> 1001: the Settings page was removed; re-import the control panel
+       step so its configlet disappears from Site Setup on existing sites. -->
+  <genericsetup:upgradeDepends
+      title="Remove the SkynetA11y PDF Remediation Settings configlet"
+      profile="plone_SkynetA11y_pdf_remediation:default"
+      source="1000"
+      destination="1001"
+      import_steps="controlpanel"
+      />
+
+</configure>

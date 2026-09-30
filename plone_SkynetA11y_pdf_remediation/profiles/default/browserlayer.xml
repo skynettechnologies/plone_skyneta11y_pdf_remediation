@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+  <layer
+      name="plone_SkynetA11y_pdf_remediation"
+      interface="plone_SkynetA11y_pdf_remediation.interfaces.IPlonePdfRemediationLayer"
+      />
+</layers>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<registry>
+  <!-- Settings live under the "plone_SkynetA11y_pdf_remediation." prefix. The schema
+       defaults are the values the Django/Odoo builds shipped with; re-running
+       this step never overwrites a value an admin has already changed. -->
+  <records
+      interface="plone_SkynetA11y_pdf_remediation.interfaces.IPdfRemediationSettings"
+      prefix="plone_SkynetA11y_pdf_remediation"
+      />
+</registry>

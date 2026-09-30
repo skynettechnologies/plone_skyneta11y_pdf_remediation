@@ -1,0 +1,6 @@
+[plone.autoinclude.plugin]
+module = plone_SkynetA11y_pdf_remediation
+target = plone
+
+[z3c.autoinclude.plugin]
+target = plone

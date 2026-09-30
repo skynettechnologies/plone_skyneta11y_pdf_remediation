@@ -1,0 +1,5 @@
+recursive-include plone_SkynetA11y_pdf_remediation/browser/templates *
+recursive-include plone_SkynetA11y_pdf_remediation/browser/static *
+recursive-include plone_SkynetA11y_pdf_remediation/profiles *
+recursive-include plone_SkynetA11y_pdf_remediation *.zcml
+include README.md

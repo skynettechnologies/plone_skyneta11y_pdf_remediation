@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plone-SkynetA11y-pdf-remediation"
+version = "1.0.0"
+description = "PDF accessibility (WCAG / PDF-UA) remediation dashboard: upload PDFs, scan a website for PDFs, download AI-remediated copies."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "Skynet Technologies USA LLC", email = "hello@skynettechnologies.com" }
+]
+keywords = ["plone", "accessibility", "pdf", "wcag", "pdf/ua", "remediation", "ada", "section 508"]
+classifiers = [
+    "Framework :: Plone",
+    "Framework :: Plone :: 6.0",
+    "Framework :: Plone :: 6.1",
+    "Framework :: Plone :: 6.2",
+    "Framework :: Plone :: Addon",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "Products.CMFPlone>=6.0",
+    "plone.api",
+    "plone.app.registry",
+]
+
+[project.urls]
+Homepage = "https://www.skynettechnologies.com/pdf-accessibility-remediation"
+Support = "https://www.skynettechnologies.com/report-accessibility-problem"
+
+# Lets Plone pick the add-on up automatically (its ZCML is then loaded without
+# listing it under `zcml =` in buildout). Both groups are declared: the first is
+# read by z3c.autoinclude (Plone 6.0), the second by plone.autoinclude (6.1+).
+[project.entry-points."z3c.autoinclude.plugin"]
+target = "plone"
+
+[project.entry-points."plone.autoinclude.plugin"]
+target = "plone"
+module = "plone_SkynetA11y_pdf_remediation"
+
+[tool.setuptools]
+include-package-data = true
+zip-safe = false
+
+[tool.setuptools.packages.find]
+include = ["plone_SkynetA11y_pdf_remediation*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+plone_SkynetA11y_pdf_remediation = [
+    "*.zcml",
+    "browser/*.zcml",
+    "browser/templates/*.pt",
+    "browser/static/css/*.css",
+    "browser/static/img/*",
+    "browser/static/js/*.js",
+    "profiles/*/*.xml",
+]

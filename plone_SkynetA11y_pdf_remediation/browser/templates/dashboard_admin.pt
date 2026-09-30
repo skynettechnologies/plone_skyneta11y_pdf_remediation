@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone_SkynetA11y_pdf_remediation">
+<body>
+
+  <metal:title fill-slot="content-title">
+    <h1 class="documentFirstHeading" i18n:translate="">SkynetA11y PDF Remediation</h1>
+  </metal:title>
+
+  <metal:desc fill-slot="content-description">
+    <p class="documentDescription"><a href="#" tal:attributes="href view/dashboard_url" target="_blank" rel="noopener" i18n:translate="">Open in a full page</a></p>
+  </metal:desc>
+
+  <metal:content-core fill-slot="content-core">
+    <div id="aiopdf-admin-embed">
+      <iframe src="${view/dashboard_url}"
+              title="SkynetA11y PDF Remediation"
+              style="display:block; width:100%; min-height:85vh; border:0;"
+              loading="lazy">
+      </iframe>
+    </div>
+  </metal:content-core>
+
+</body>
+</html>

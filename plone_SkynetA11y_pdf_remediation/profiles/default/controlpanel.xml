@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<object
+    name="portal_controlpanel"
+    meta_type="Plone Control Panel Tool"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
+  <!-- Django admin: "SkynetA11y PDF Remediation Dashboard" sidebar entry -->
+  <configlet
+      title="SkynetA11y PDF Remediation Dashboard"
+      action_id="plone_SkynetA11y_pdf_remediation_dashboard"
+      appId="plone_SkynetA11y_pdf_remediation"
+      category="Products"
+      condition_expr=""
+      icon_expr=""
+      url_expr="string:${portal_url}/@@pdf-remediation-dashboard-admin"
+      visible="True"
+      i18n:attributes="title">
+    <permission>Manage portal</permission>
+  </configlet>
+
+  <!-- The settings page was removed: drop its configlet if an earlier
+       version of this add-on registered it. -->
+  <configlet
+      action_id="plone_SkynetA11y_pdf_remediation"
+      appId="plone_SkynetA11y_pdf_remediation"
+      remove="True"
+      />
+
+</object>
